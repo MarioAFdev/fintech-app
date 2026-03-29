@@ -1,0 +1,26 @@
+# Entorno
+.env
+.env.local
+.env.*.local
+
+# Dependencias
+backend/vendor/
+node_modules/
+
+# Logs
+*.log
+error_log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Composer
+composer.phar
+composer.lock
