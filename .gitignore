@@ -1,10 +1,10 @@
 # Entorno
-.env
-.env.local
-.env.*.local
+#.env
+#.env.local
+#.env.*.local
 
 # Dependencias
-backend/vendor/
+#backend/vendor/
 node_modules/
 
 # Logs
@@ -23,4 +23,4 @@ Thumbs.db
 
 # Composer
 composer.phar
-composer.lock
+#composer.lock
