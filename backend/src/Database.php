@@ -30,7 +30,13 @@ class Database
         } catch (PDOException $e) {
             // En desarrollo, podemos mostrar el error; en producción, loguear
             http_response_code(500);
-            echo json_encode(['error' => 'Error de conexión a la base de datos']);
+            echo json_encode([
+                'error' => 'Error de conexión a la base de datos',
+                'debug_message' => $e->getMessage(), // <-- ESTA LÍNEA ES LA CLAVE
+                'host_intentado' => $host,
+                'usuario_intentado' => $user
+            ]);
+
             exit;
         }
     }

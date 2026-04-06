@@ -6,6 +6,7 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Exception;
 
+require_once __DIR__ . '/Usuario.php';
 class AuthController
 {
     private string $key;

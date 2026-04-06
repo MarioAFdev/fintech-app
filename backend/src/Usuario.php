@@ -5,6 +5,8 @@ namespace Fintech;
 use PDO;
 use Exception;
 
+require_once __DIR__ . '/Model.php';
+require_once __DIR__ . '/Database.php';
 class Usuario extends Model
 {
     private int $id;
@@ -13,24 +15,63 @@ class Usuario extends Model
     private string $nombre;
     private string $apellidos;
     private string $fecha_registro;
-    private string $ultimo_acceso;
+    private ?string $ultimo_acceso = null;
     private bool $activo;
     private string $rol;
 
     // Getters y setters
-    public function getId(): int { return $this->id; }
-    public function getEmail(): string { return $this->email; }
-    public function getNombre(): string { return $this->nombre; }
-    public function getApellidos(): string { return $this->apellidos; }
-    public function getFechaRegistro(): string { return $this->fecha_registro; }
-    public function getUltimoAcceso(): ?string { return $this->ultimo_acceso; }
-    public function isActivo(): bool { return $this->activo; }
-    public function getRol(): string { return $this->rol; }
-    public function setEmail(string $email): void { $this->email = $email; }
-    public function setNombre(string $nombre): void { $this->nombre = $nombre; }
-    public function setApellidos(string $apellidos): void { $this->apellidos = $apellidos; }
-    public function setActivo(bool $activo): void { $this->activo = $activo; }
-    public function setRol(string $rol): void { $this->rol = $rol; }
+    public function getId(): int
+    {
+        return $this->id;
+    }
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+    public function getNombre(): string
+    {
+        return $this->nombre;
+    }
+    public function getApellidos(): string
+    {
+        return $this->apellidos;
+    }
+    public function getFechaRegistro(): string
+    {
+        return $this->fecha_registro;
+    }
+    public function getUltimoAcceso(): ?string
+    {
+        return $this->ultimo_acceso;
+    }
+    public function isActivo(): bool
+    {
+        return $this->activo;
+    }
+    public function getRol(): string
+    {
+        return $this->rol;
+    }
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
+    }
+    public function setNombre(string $nombre): void
+    {
+        $this->nombre = $nombre;
+    }
+    public function setApellidos(string $apellidos): void
+    {
+        $this->apellidos = $apellidos;
+    }
+    public function setActivo(bool $activo): void
+    {
+        $this->activo = $activo;
+    }
+    public function setRol(string $rol): void
+    {
+        $this->rol = $rol;
+    }
 
     /**
      * Busca un usuario por email
