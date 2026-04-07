@@ -12,6 +12,7 @@ class Usuario extends Model
     private int $id;
     private string $email;
     private string $password_hash;
+    private string $dni;
     private string $nombre;
     private string $apellidos;
     private string $fecha_registro;
@@ -27,6 +28,10 @@ class Usuario extends Model
     public function getEmail(): string
     {
         return $this->email;
+    }
+    public function getDni(): string
+    {
+        return $this->dni;
     }
     public function getNombre(): string
     {
@@ -55,6 +60,10 @@ class Usuario extends Model
     public function setEmail(string $email): void
     {
         $this->email = $email;
+    }
+    public function setDni(string $dni): void
+    {
+        $this->dni = $dni;
     }
     public function setNombre(string $nombre): void
     {
@@ -114,7 +123,7 @@ class Usuario extends Model
     /**
      * Crea un nuevo usuario
      */
-    public static function create(string $email, string $password, string $nombre, string $apellidos): ?self
+    public static function create(string $email, string $password, string $dni, string $nombre, string $apellidos): ?self
     {
         $db = Database::getInstance()->getConnection();
 
@@ -126,13 +135,14 @@ class Usuario extends Model
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
         $stmt = $db->prepare("
-            INSERT INTO usuarios (email, password_hash, nombre, apellidos, activo, rol)
-            VALUES (:email, :password_hash, :nombre, :apellidos, 1, 'usuario')
+            INSERT INTO usuarios (email, password_hash, dni, nombre, apellidos, activo, rol)
+            VALUES (:email, :password_hash, :dni, :nombre, :apellidos, 1, 'usuario')
         ");
 
         $result = $stmt->execute([
             'email' => $email,
             'password_hash' => $password_hash,
+            'dni' => $dni,
             'nombre' => $nombre,
             'apellidos' => $apellidos
         ]);
@@ -198,6 +208,7 @@ class Usuario extends Model
         $this->id = $data['id'];
         $this->email = $data['email'];
         $this->password_hash = $data['password_hash'];
+        $this->dni = $data['dni'];
         $this->nombre = $data['nombre'];
         $this->apellidos = $data['apellidos'];
         $this->fecha_registro = $data['fecha_registro'];
