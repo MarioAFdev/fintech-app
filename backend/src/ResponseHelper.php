@@ -9,7 +9,7 @@ class ResponseHelper
      * @param mixed $data Datos a enviar (array u objeto)
      * @param int $code Código de estado HTTP (default 200)
      */
-    public static function jsonResponse($data, int $code = 200)
+    public static function jsonResponse($data, int $code = 200): void
     {
         // Limpiamos cualquier salida previa para evitar errores de headers
         if (ob_get_length()) ob_clean();
@@ -17,7 +17,7 @@ class ResponseHelper
         http_response_code($code);
         header('Content-Type: application/json; charset=UTF-8');
 
-        echo json_encode($data);
+        echo json_encode($data, JSON_UNESCAPED_UNICODE);
         exit; // Cortamos la ejecución para asegurar que no se envíe nada más
     }
 

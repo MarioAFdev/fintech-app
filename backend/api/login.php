@@ -1,7 +1,5 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
-require_once __DIR__ . '/../src/AuthController.php';
-require_once __DIR__ . '/../src/ResponseHelper.php';
 
 use Fintech\Backend\AuthController;
 use Fintech\Backend\ResponseHelper;
