@@ -1,10 +1,8 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
-require_once __DIR__ . '/../src/AuthController.php';
-require_once __DIR__ . '/../src/ResponseHelper.php';
 
-use Fintech\AuthController;
-use Fintech\ResponseHelper;
+use Fintech\Backend\AuthController;
+use Fintech\Backend\ResponseHelper;
 
 try {
     // 1. Solo permitimos POST

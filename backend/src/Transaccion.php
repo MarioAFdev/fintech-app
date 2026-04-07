@@ -1,6 +1,6 @@
 <?php
 
-namespace Fintech;
+namespace Fintech\Backend;
 
 use PDO;
 use Exception;
@@ -34,11 +34,12 @@ class Transaccion extends Model
         $db = Database::getInstance()->getConnection();
         $stmt = $db->prepare("
             SELECT * FROM transacciones 
-            WHERE cuenta_origen_id = :cuenta_id OR cuenta_destino_id = :cuenta_id
+            WHERE cuenta_origen_id = :origen OR cuenta_destino_id = :destino
             ORDER BY fecha DESC
             LIMIT :limite
         ");
-        $stmt->bindValue(':cuenta_id', $cuentaId, PDO::PARAM_INT);
+        $stmt->bindValue(':origen', $cuentaId, PDO::PARAM_INT);
+        $stmt->bindValue(':destino', $cuentaId, PDO::PARAM_INT);
         $stmt->bindValue(':limite', $limite, PDO::PARAM_INT);
         $stmt->execute();
         $rows = $stmt->fetchAll();

@@ -1,12 +1,12 @@
 <?php
 
-namespace Fintech;
+namespace Fintech\Backend;
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Exception;
 
-require_once __DIR__ . '/Usuario.php';
+//require_once __DIR__ . '/Usuario.php'; // No es necesario porque el autoload de Composer ya lo carga
 class AuthController
 {
     private string $key;
@@ -25,10 +25,11 @@ class AuthController
             throw new Exception("Credenciales incorrectas");
         }
 
+        $exp = time() + (defined('JWT_EXPIRATION') ? JWT_EXPIRATION : 3600); // 1 hora por defecto
         $payload = [
             'iss' => "fintech_api",
             'iat' => time(),
-            'exp' => time() + 3600, // 1 hora
+            'exp' => $exp,
             'sub' => $usuario->getId()
         ];
 

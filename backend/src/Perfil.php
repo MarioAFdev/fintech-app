@@ -4,7 +4,7 @@
 // Si el token no es válido, este archivo corta la ejecución y da error 401.
 require_once __DIR__ . '/../middleware/validateToken.php';
 
-use Fintech\Usuario;
+use Fintech\Backend\Usuario;
 
 // 2. Identificar qué quiere hacer el usuario (GET o PUT)
 $metodo = $_SERVER['REQUEST_METHOD'];
