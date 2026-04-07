@@ -1,6 +1,6 @@
 <?php
 
-namespace Fintech;
+namespace Fintech\Backend;
 
 use PDO;
 use PDOException;
@@ -22,7 +22,7 @@ class Database
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES => false,
+            PDO::ATTR_EMULATE_PREPARES => true, // <--Cambiar a false por seguridad. Con true habilitamos emulación de prepares para evitar problemas con ciertos tipos de datos
         ];
 
         try {

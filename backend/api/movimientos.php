@@ -1,5 +1,5 @@
 <?php
-// 1. Cargamos configuración y dependencias
+// Configuración y dependencias
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../src/AuthController.php';
 require_once __DIR__ . '/../src/ResponseHelper.php';
@@ -8,7 +8,7 @@ use Fintech\AuthController;
 use Fintech\ResponseHelper;
 
 try {
-    // 2. Extraer y Validar el Token
+    // Extraer y Validar el Token
     $headers = getallheaders();
     $authHeader = $headers['Authorization'] ?? $headers['authorization'] ?? '';
     $token = str_replace('Bearer ', '', $authHeader);

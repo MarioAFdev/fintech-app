@@ -1,6 +1,6 @@
 <?php
 
-namespace Fintech;
+namespace Fintech\Backend;
 
 use PDO;
 use Exception;
