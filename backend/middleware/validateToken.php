@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
 
-use Fintech\AuthController;
+use Fintech\Backend\AuthController;
 
 // 1. Obtener el token de la cabecera Authorization
 $headers = getallheaders();

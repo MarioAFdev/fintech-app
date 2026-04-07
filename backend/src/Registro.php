@@ -3,8 +3,8 @@
 // 1. Cargar configuración y clases
 require_once __DIR__ . '/../config/config.php';
 
-use Fintech\Usuario;
-use Fintech\Cuenta;
+use Fintech\Backend\Usuario;
+use Fintech\Backend\Cuenta;
 
 // 2. Cabeceras obligatorias (Ya configuradas en config.php, pero aseguramos JSON)
 header('Content-Type: application/json');
