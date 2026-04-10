@@ -44,3 +44,30 @@ function gestionarErrorHTTP(status, mensaje) {
             mostrarNotificacion(`Error inesperado (${status}).`, 'error');
     }
 }
+
+// Notificaciones toast para el usuario
+function mostrarNotificacion(mensaje, tipo = 'info') {
+    const toast = document.createElement('div');
+    const colores = {
+        exito: '#1B5E20',
+        error: '#B71C1C',
+        advertencia: '#E65100',
+        info: '#0A2540'
+    };
+    Object.assign(toast.style, {
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        background: colores[tipo] || colores.info,
+        color: 'white',
+        padding: '12px 20px',
+        borderRadius: '8px',
+        zIndex: 9999,
+        boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+        maxWidth: '320px',
+        fontSize: '14px'
+    });
+    toast.textContent = mensaje;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3500); // Auto-desaparecer
+}
