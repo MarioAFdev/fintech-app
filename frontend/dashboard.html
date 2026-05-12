@@ -166,7 +166,7 @@
 <button class="text-gray-600 hover:bg-gray-50 p-2 rounded-lg transition-colors active:scale-95 duration-150">
 <span class="material-symbols-outlined">help_outline</span>
 </button>
-<button class="flex items-center gap-2 hover:bg-gray-50 p-1 pr-3 rounded-full transition-colors active:scale-95 duration-150 border border-transparent hover:border-gray-200">
+<button class="flex items-center gap-2 hover:bg-gray-50 p-1 pr-3 rounded-full transition-colors active:scale-95 duration-150 border border-transparent hover:border-gray-200" onclick="document.getElementById('account-modal').classList.remove('hidden')">
 <img alt="User profile" class="w-8 h-8 rounded-full object-cover" data-alt="Close up portrait of a smiling young professional man with short dark hair in a well-lit studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLAHoCuTSP9VliL9e41rQM5WolWgYZCPSX4zyPb8-PHs1RcTRKfZzAUxoUGSWC2vT6fguigMr_OTJkG_eiagWVIKgld3DOqWxdi70GC81tVlJl-ohX3tWMMn5BARzrIE7STWTXurd_45T3T8EJuLnnIm_zSwN5gXqsGCZ65_kqdFb2vhi_m-FTLi7C9nb6cWbHEgoQXh2Hgn-jOOg7C2eOHbIdvUdBgrDyhDlS2KJzd1FyzLgQQL-A0FJu67UUQ7ue2yVHkVvNN8YX"/>
 <span class="text-sm font-medium text-gray-700 hidden md:block">Alex D.</span>
 <span class="material-symbols-outlined text-gray-400 text-sm hidden md:block">keyboard_arrow_down</span>
@@ -408,4 +408,67 @@
 </div>
 </main>
 </div>
-</body></html>
+<div class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm transition-opacity duration-300" id="account-modal">
+<div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 scale-95">
+<!-- Modal Header -->
+<div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-surface-container-low">
+<h3 class="font-headline-md text-title-lg text-on-surface">Account Details</h3>
+<button class="p-2 hover:bg-gray-200 rounded-full transition-colors text-on-surface-variant" onclick="document.getElementById('account-modal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center">
+<img alt="User profile" class="w-14 h-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLAHoCuTSP9VliL9e41rQM5WolWgYZCPSX4zyPb8-PHs1RcTRKfZzAUxoUGSWC2vT6fguigMr_OTJkG_eiagWVIKgld3DOqWxdi70GC81tVlJl-ohX3tWMMn5BARzrIE7STWTXurd_45T3T8EJuLnnIm_zSwN5gXqsGCZ65_kqdFb2vhi_m-FTLi7C9nb6cWbHEgoQXh2Hgn-jOOg7C2eOHbIdvUdBgrDyhDlS2KJzd1FyzLgQQL-A0FJu67UUQ7ue2yVHkVvNN8YX"/>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-on-surface">Juan Pérez</p>
+<p class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span>
+            Premium Member
+          </p>
+</div>
+</div>
+<div class="grid gap-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline">badge</span>
+<div>
+<p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">DNI / ID Card</p>
+<p class="text-on-surface">12345678A</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline">mail</span>
+<div>
+<p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Email Address</p>
+<p class="text-on-surface">usuario@ejemplo.com</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline">call</span>
+<div>
+<p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Phone Number</p>
+<p class="text-on-surface">+34 600 000 000</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline">star</span>
+<div>
+<p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Account Type</p>
+<p class="text-on-surface">Personal Premium</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-end">
+<button class="px-6 py-2 bg-primary text-white rounded-xl font-medium hover:bg-primary-container transition-colors shadow-lg shadow-primary/20" onclick="document.getElementById('account-modal').classList.add('hidden')">
+        Done
+      </button>
+</div>
+</div>
+<!-- Close on background click -->
+<div class="absolute inset-0 -z-10" onclick="document.getElementById('account-modal').classList.add('hidden')"></div>
+</div></body></html>
