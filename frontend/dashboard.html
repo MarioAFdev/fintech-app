@@ -1,474 +1,471 @@
 <!DOCTYPE html>
+<html lang="es">
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Main Dashboard - FintechPro</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "inverse-primary": "#adc7ff",
-                    "background": "#f8f9fa",
-                    "primary": "#005bbf",
-                    "tertiary-fixed": "#89fa9b",
-                    "tertiary": "#006d2c",
-                    "on-secondary": "#ffffff",
-                    "primary-container": "#1a73e8",
-                    "outline-variant": "#c1c6d6",
-                    "surface-container-highest": "#e1e3e4",
-                    "on-error-container": "#93000a",
-                    "primary-fixed-dim": "#adc7ff",
-                    "on-tertiary-fixed": "#002108",
-                    "inverse-on-surface": "#f0f1f2",
-                    "surface-container-lowest": "#ffffff",
-                    "error": "#ba1a1a",
-                    "surface-tint": "#005bc0",
-                    "on-primary-container": "#ffffff",
-                    "on-primary-fixed-variant": "#004493",
-                    "on-tertiary-fixed-variant": "#005320",
-                    "secondary-fixed": "#d9e2ff",
-                    "secondary-fixed-dim": "#b0c6ff",
-                    "surface-dim": "#d9dadb",
-                    "outline": "#727785",
-                    "surface-container": "#edeeef",
-                    "surface-variant": "#e1e3e4",
-                    "surface-container-low": "#f3f4f5",
-                    "on-tertiary-container": "#ffffff",
-                    "on-secondary-fixed-variant": "#00429c",
-                    "on-surface": "#191c1d",
-                    "on-primary-fixed": "#001a41",
-                    "secondary": "#2b5bb5",
-                    "surface-container-high": "#e7e8e9",
-                    "tertiary-container": "#008939",
-                    "inverse-surface": "#2e3132",
-                    "on-tertiary": "#ffffff",
-                    "error-container": "#ffdad6",
-                    "secondary-container": "#759efd",
-                    "surface-bright": "#f8f9fa",
-                    "on-error": "#ffffff",
-                    "on-secondary-fixed": "#001945",
-                    "tertiary-fixed-dim": "#6ddd81",
-                    "on-primary": "#ffffff",
-                    "primary-fixed": "#d8e2ff",
-                    "on-background": "#191c1d",
-                    "on-secondary-container": "#00337c",
-                    "on-surface-variant": "#414754",
-                    "surface": "#f8f9fa"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "unit": "8px",
-                    "container-max-width": "1440px",
-                    "margin-page": "32px",
-                    "gutter": "24px",
-                    "form-gap": "16px",
-                    "card-padding": "24px"
-            },
-            "fontFamily": {
-                    "body-md": [
-                            "Inter"
-                    ],
-                    "body-sm": [
-                            "Inter"
-                    ],
-                    "headline-md": [
-                            "Inter"
-                    ],
-                    "title-lg": [
-                            "Inter"
-                    ],
-                    "display-lg": [
-                            "Inter"
-                    ],
-                    "label-md": [
-                            "Inter"
-                    ]
-            },
-            "fontSize": {
-                    "body-md": [
-                            "16px",
-                            {
-                                    "lineHeight": "24px",
-                                    "fontWeight": "400"
-                            }
-                    ],
-                    "body-sm": [
-                            "14px",
-                            {
-                                    "lineHeight": "20px",
-                                    "fontWeight": "400"
-                            }
-                    ],
-                    "headline-md": [
-                            "24px",
-                            {
-                                    "lineHeight": "32px",
-                                    "letterSpacing": "-0.01em",
-                                    "fontWeight": "600"
-                            }
-                    ],
-                    "title-lg": [
-                            "18px",
-                            {
-                                    "lineHeight": "24px",
-                                    "fontWeight": "600"
-                            }
-                    ],
-                    "display-lg": [
-                            "48px",
-                            {
-                                    "lineHeight": "56px",
-                                    "letterSpacing": "-0.02em",
-                                    "fontWeight": "700"
-                            }
-                    ],
-                    "label-md": [
-                            "12px",
-                            {
-                                    "lineHeight": "16px",
-                                    "letterSpacing": "0.05em",
-                                    "fontWeight": "500"
-                            }
-                    ]
-            }
-    },
-        },
-      }
-    </script>
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard - FintechPro</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+                rel="stylesheet" />
+
+        <style>
+                :root {
+                        --fondo: #f8f9fa;
+                        --blanco: #ffffff;
+                        --primario: #005bbf;
+                        --primario-suave: #1a73e8;
+                        --texto: #191c1d;
+                        --texto-gris: #414754;
+                        --borde: #e1e3e4;
+                        --verde: #008939;
+                        --verde-fondo: #89fa9b;
+                        --error: #ba1a1a;
+                        --error-fondo: #ffdad6;
+                        --sombra: 0 4px 20px rgba(0, 0, 0, 0.04);
+                }
+
+                * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                }
+
+                body {
+                        font-family: 'Inter', sans-serif;
+                        background-color: var(--fondo);
+                        color: var(--texto);
+                        display: flex;
+                        height: 100vh;
+                        overflow: hidden;
+                }
+
+                /* --- SIDEBAR COMPLETO --- */
+                .sidebar {
+                        width: 280px;
+                        background: var(--blanco);
+                        border-right: 1px solid var(--borde);
+                        display: flex;
+                        flex-direction: column;
+                        padding: 24px 0;
+                        z-index: 20;
+                }
+
+                .logo-box {
+                        padding: 0 24px;
+                        margin-bottom: 32px;
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                }
+
+                .logo-icon {
+                        background: var(--primario-suave);
+                        color: white;
+                        padding: 8px;
+                        border-radius: 8px;
+                        display: flex;
+                }
+
+                .nav-lista {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+                        padding: 0 12px;
+                }
+
+                .nav-link {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 12px 16px;
+                        text-decoration: none;
+                        color: var(--texto-gris);
+                        font-size: 14px;
+                        font-weight: 500;
+                        border-radius: 8px;
+                        transition: 0.2s;
+                }
+
+                .nav-link:hover {
+                        background: #f3f4f5;
+                        color: var(--texto);
+                }
+
+                .nav-link.activo {
+                        background: #d9e2ff;
+                        color: var(--primario);
+                        font-weight: 600;
+                        border-left: 4px solid var(--primario);
+                        border-top-left-radius: 0;
+                        border-bottom-left-radius: 0;
+                }
+
+
+                /* --- CABECERA --- */
+                .main-wrapper {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        overflow: hidden;
+                }
+
+                .header {
+                        height: 72px;
+                        background: rgba(255, 255, 255, 0.8);
+                        backdrop-filter: blur(20px);
+                        border-bottom: 1px solid var(--borde);
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0 32px;
+                        flex-shrink: 0;
+                }
+
+                .notif-btn {
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        position: relative;
+                        padding: 8px;
+                        color: var(--texto-gris);
+                }
+
+                .notif-punto {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        width: 8px;
+                        height: 8px;
+                        background: var(--error);
+                        border-radius: 50%;
+                }
+
+                .perfil-btn {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 4px 12px;
+                        border-radius: 50px;
+                        cursor: pointer;
+                        transition: 0.2s;
+                }
+
+                .perfil-btn:hover {
+                        background: #f3f4f5;
+                }
+
+                /* --- CONTENIDO DASHBOARD --- */
+                .content {
+                        flex: 1;
+                        padding: 32px;
+                        overflow-y: auto;
+                }
+
+                .banner-balance {
+                        background: var(--blanco);
+                        padding: 32px;
+                        border-radius: 24px;
+                        box-shadow: var(--sombra);
+                        margin-bottom: 32px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                }
+
+                .grid-botones {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        gap: 16px;
+                        margin-bottom: 32px;
+                }
+
+                .card-accion {
+                        background: var(--blanco);
+                        border: none;
+                        padding: 24px;
+                        border-radius: 24px;
+                        box-shadow: var(--sombra);
+                        cursor: pointer;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 12px;
+                        transition: 0.2s;
+                }
+
+                .card-accion:hover {
+                        background: #f3f4f5;
+                        transform: translateY(-2px);
+                }
+
+                .icon-circle {
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                }
+
+                /* --- GRÁFICO Y LISTA --- */
+                .inferior-grid {
+                        display: grid;
+                        grid-template-columns: 1.5fr 1fr;
+                        gap: 24px;
+                }
+
+                .seccion-blanca {
+                        background: var(--blanco);
+                        border-radius: 24px;
+                        box-shadow: var(--sombra);
+                        overflow: hidden;
+                }
+
+                .donut-box {
+                        width: 192px;
+                        height: 192px;
+                        margin: 32px auto;
+                        border-radius: 50%;
+                        position: relative;
+                        background: conic-gradient(var(--primario-suave) 0% 45%, var(--primario) 45% 70%, var(--verde-fondo) 70% 85%, var(--borde) 85% 100%);
+                }
+
+                .donut-centro {
+                        position: absolute;
+                        inset: 16px;
+                        background: var(--blanco);
+                        border-radius: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                }
+
+                /* --- MODAL --- */
+                .modal-fondo {
+                        position: fixed;
+                        inset: 0;
+                        background: rgba(0, 0, 0, 0.4);
+                        backdrop-filter: blur(4px);
+                        display: none;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 100;
+                }
+
+                .modal-caja {
+                        background: white;
+                        width: 400px;
+                        border-radius: 24px;
+                        overflow: hidden;
+                        animation: zoom 0.3s ease;
+                }
+
+                @keyframes zoom {
+                        from {
+                                transform: scale(0.9);
+                        }
+
+                        to {
+                                transform: scale(1);
+                        }
+                }
+        </style>
 </head>
-<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden min-h-screen">
-<!-- TopNavBar (Mobile First, fixed on Web) -->
-<header class="bg-white/70 backdrop-blur-xl h-[72px] w-full sticky top-0 z-50 shadow-sm border-b border-gray-200/50 flex justify-between items-center px-6 md:px-gutter max-w-container-max-width mx-auto">
-<div class="flex items-center gap-4">
-<!-- Mobile Menu Trigger -->
-<button class="md:hidden text-gray-600 hover:bg-gray-50 p-2 rounded-lg transition-colors active:scale-95 duration-150">
-<span class="material-symbols-outlined">menu</span>
-</button>
-<span class="text-xl font-bold tracking-tight text-blue-700">FintechPro</span>
-</div>
-<div class="flex items-center gap-4">
-<button class="text-gray-600 hover:bg-gray-50 p-2 rounded-lg transition-colors active:scale-95 duration-150 relative">
-<span class="material-symbols-outlined">notifications</span>
-<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
-</button>
-<button class="text-gray-600 hover:bg-gray-50 p-2 rounded-lg transition-colors active:scale-95 duration-150">
-<span class="material-symbols-outlined">help_outline</span>
-</button>
-<button class="flex items-center gap-2 hover:bg-gray-50 p-1 pr-3 rounded-full transition-colors active:scale-95 duration-150 border border-transparent hover:border-gray-200" onclick="document.getElementById('account-modal').classList.remove('hidden')">
-<img alt="User profile" class="w-8 h-8 rounded-full object-cover" data-alt="Close up portrait of a smiling young professional man with short dark hair in a well-lit studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLAHoCuTSP9VliL9e41rQM5WolWgYZCPSX4zyPb8-PHs1RcTRKfZzAUxoUGSWC2vT6fguigMr_OTJkG_eiagWVIKgld3DOqWxdi70GC81tVlJl-ohX3tWMMn5BARzrIE7STWTXurd_45T3T8EJuLnnIm_zSwN5gXqsGCZ65_kqdFb2vhi_m-FTLi7C9nb6cWbHEgoQXh2Hgn-jOOg7C2eOHbIdvUdBgrDyhDlS2KJzd1FyzLgQQL-A0FJu67UUQ7ue2yVHkVvNN8YX"/>
-<span class="text-sm font-medium text-gray-700 hidden md:block">Alex D.</span>
-<span class="material-symbols-outlined text-gray-400 text-sm hidden md:block">keyboard_arrow_down</span>
-</button>
-</div>
-</header>
-<div class="flex w-full max-w-container-max-width mx-auto">
-<!-- SideNavBar -->
-<aside class="hidden md:flex flex-col w-[280px] h-[calc(100vh-72px)] sticky top-[72px] bg-white border-r border-gray-100 py-6">
-<div class="px-6 mb-8 flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
-<span class="material-symbols-outlined">account_balance_wallet</span>
-</div>
-<div>
-<h2 class="font-title-lg text-title-lg text-on-surface">Wealth Management</h2>
-<p class="font-label-md text-label-md text-on-surface-variant">Premium Tier</p>
-</div>
-</div>
-<nav class="flex-1 overflow-y-auto px-2 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 bg-blue-50 text-blue-700 border-l-4 border-blue-600 rounded-r-lg font-sans text-[14px] leading-tight font-medium cursor-pointer transition-all duration-200" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
-                    Dashboard
-                </a>
-<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-gray-900 hover:bg-gray-50 border-l-4 border-transparent rounded-r-lg font-sans text-[14px] leading-tight cursor-pointer transition-all duration-200" href="#">
-<span class="material-symbols-outlined">account_balance</span>
-                    Accounts
-                </a>
-<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-gray-900 hover:bg-gray-50 border-l-4 border-transparent rounded-r-lg font-sans text-[14px] leading-tight cursor-pointer transition-all duration-200" href="#">
-<span class="material-symbols-outlined">credit_card</span>
-                    Cards
-                </a>
-<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-gray-900 hover:bg-gray-50 border-l-4 border-transparent rounded-r-lg font-sans text-[14px] leading-tight cursor-pointer transition-all duration-200" href="#">
-<span class="material-symbols-outlined">payments</span>
-                    Payments
-                </a>
-<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-gray-900 hover:bg-gray-50 border-l-4 border-transparent rounded-r-lg font-sans text-[14px] leading-tight cursor-pointer transition-all duration-200" href="#">
-<span class="material-symbols-outlined">verified_user</span>
-                    Security
-                </a>
-</nav>
-<div class="px-4 mt-auto space-y-4">
-<div class="space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-sans text-[14px] leading-tight cursor-pointer transition-all duration-200" href="#">
-<span class="material-symbols-outlined">settings</span>
-                        Settings
-                    </a>
-<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-sans text-[14px] leading-tight cursor-pointer transition-all duration-200" href="#">
-<span class="material-symbols-outlined">contact_support</span>
-                        Support
-                    </a>
-</div>
-<button class="w-full bg-primary-container text-on-primary-container rounded-xl py-3 px-4 font-label-md text-label-md hover:bg-primary transition-colors active:scale-95 duration-150">
-                    Upgrade Plan
-                </button>
-</div>
-</aside>
-<!-- Main Content -->
-<main class="flex-1 p-6 md:p-margin-page overflow-y-auto">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-<!-- Hero & Quick Actions (Span full or 8 cols depending on layout) -->
-<div class="col-span-1 lg:col-span-12 space-y-8">
-<!-- Hero Section -->
-<section class="bg-surface-container-lowest rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)] relative overflow-hidden">
-<div class="absolute top-0 right-0 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
-<div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
-<div>
-<p class="font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider">Total Balance</p>
-<h1 class="font-display-lg text-display-lg text-on-surface flex items-baseline gap-2">
-                                     $42,500<span class="text-headline-md text-outline">.80</span>
-</h1>
-</div>
-<div class="flex items-center gap-3">
-<div class="relative">
-<button class="flex items-center gap-2 bg-surface text-on-surface border border-outline-variant rounded-xl px-4 py-2.5 font-label-md text-label-md hover:bg-surface-container-low transition-colors active:scale-95 duration-150">
-                                         Manage Accounts
-                                         <span class="material-symbols-outlined text-sm">expand_more</span>
-</button>
-</div>
-<button class="flex items-center gap-2 bg-primary-container text-on-primary-container rounded-xl px-4 py-2.5 font-label-md text-label-md hover:bg-primary transition-colors active:scale-95 duration-150 shadow-sm shadow-primary/20">
-<span class="material-symbols-outlined text-sm">info</span>
-                                     Account Info
-                                 </button>
-</div>
-</div>
-</section>
-<!-- Quick Actions -->
-<section class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<button class="bg-surface-container-lowest rounded-2xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col items-center justify-center gap-3 hover:bg-surface-container-low transition-colors active:scale-95 duration-150 group">
-<div class="w-12 h-12 rounded-full bg-primary-container/10 text-primary-container flex items-center justify-center group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">swap_horiz</span>
-</div>
-<span class="font-title-lg text-title-lg text-on-surface">Transfer</span>
-</button>
-<button class="bg-surface-container-lowest rounded-2xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col items-center justify-center gap-3 hover:bg-surface-container-low transition-colors active:scale-95 duration-150 group">
-<div class="w-12 h-12 rounded-full bg-tertiary-container/10 text-tertiary-container flex items-center justify-center group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send_money</span>
-</div>
-<span class="font-title-lg text-title-lg text-on-surface">Bizum</span>
-</button>
-<button class="bg-surface-container-lowest rounded-2xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col items-center justify-center gap-3 hover:bg-surface-container-low transition-colors active:scale-95 duration-150 group">
-<div class="w-12 h-12 rounded-full bg-secondary-container/10 text-secondary-container flex items-center justify-center group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_card</span>
-</div>
-<span class="font-title-lg text-title-lg text-on-surface">Top Up</span>
-</button>
-<button class="bg-surface-container-lowest rounded-2xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col items-center justify-center gap-3 hover:bg-surface-container-low transition-colors active:scale-95 duration-150 group border border-dashed border-outline-variant">
-<div class="w-12 h-12 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined">add</span>
-</div>
-<span class="font-title-lg text-title-lg text-on-surface-variant">More</span>
-</button>
-</section>
-</div>
-<!-- Split Layout Bottom -->
-<div class="col-span-1 lg:col-span-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter mt-8">
-<!-- Recent Movements (Left) -->
-<div class="col-span-1 lg:col-span-7 bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden">
-<div class="p-6 border-b border-surface-variant flex justify-between items-center">
-<h2 class="font-headline-md text-headline-md text-on-surface">Recent Movements</h2>
-<a class="font-label-md text-label-md text-primary-container hover:underline" href="#">View full history</a>
-</div>
-<div class="divide-y divide-surface-variant">
-<!-- Transaction Item -->
-<div class="p-4 hover:bg-surface-container-low transition-colors cursor-pointer flex items-center justify-between group">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-error-container/50 text-on-error-container flex items-center justify-center">
-<span class="material-symbols-outlined">shopping_cart</span>
-</div>
-<div>
-<p class="font-title-lg text-title-lg text-on-surface text-sm">Whole Foods Market</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Today, 10:42 AM • Groceries</p>
-</div>
-</div>
-<div class="text-right">
-<p class="font-title-lg text-title-lg text-on-surface">-$142.50</p>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-primary-container transition-colors opacity-0 group-hover:opacity-100">chevron_right</span>
-</div>
-</div>
-<!-- Transaction Item -->
-<div class="p-4 hover:bg-surface-container-low transition-colors cursor-pointer flex items-center justify-between group">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
-<span class="material-symbols-outlined">payments</span>
-</div>
-<div>
-<p class="font-title-lg text-title-lg text-on-surface text-sm">TechCorp Inc. Salary</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Yesterday, 09:00 AM • Income</p>
-</div>
-</div>
-<div class="text-right">
-<p class="font-title-lg text-title-lg text-tertiary-container">+$4,250.00</p>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-primary-container transition-colors opacity-0 group-hover:opacity-100">chevron_right</span>
-</div>
-</div>
-<!-- Transaction Item -->
-<div class="p-4 hover:bg-surface-container-low transition-colors cursor-pointer flex items-center justify-between group">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-secondary-container/30 text-on-secondary-container flex items-center justify-center">
-<span class="material-symbols-outlined">flight</span>
-</div>
-<div>
-<p class="font-title-lg text-title-lg text-on-surface text-sm">Delta Airlines</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Oct 24, 14:30 PM • Travel</p>
-</div>
-</div>
-<div class="text-right">
-<p class="font-title-lg text-title-lg text-on-surface">-$450.00</p>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-primary-container transition-colors opacity-0 group-hover:opacity-100">chevron_right</span>
-</div>
-</div>
-<!-- Transaction Item -->
-<div class="p-4 hover:bg-surface-container-low transition-colors cursor-pointer flex items-center justify-between group">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
-<span class="material-symbols-outlined">home</span>
-</div>
-<div>
-<p class="font-title-lg text-title-lg text-on-surface text-sm">Downtown Apartments</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Oct 01, 00:00 AM • Rent</p>
-</div>
-</div>
-<div class="text-right">
-<p class="font-title-lg text-title-lg text-on-surface">-$2,100.00</p>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-primary-container transition-colors opacity-0 group-hover:opacity-100">chevron_right</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Expenses Chart (Right) -->
-<div class="col-span-1 lg:col-span-5 bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-6">
-<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Expenses Breakdown</h2>
-<!-- Simulated Donut Chart using Conic Gradient -->
-<div class="relative w-48 h-48 mx-auto mb-8">
-<div class="w-full h-full rounded-full" style="background: conic-gradient(
-                                 #1a73e8 0% 45%, 
-                                 #005bbf 45% 70%, 
-                                 #89fa9b 70% 85%, 
-                                 #e1e3e4 85% 100%
-                             );"></div>
-<!-- Inner circle to make it a donut -->
-<div class="absolute inset-4 bg-surface-container-lowest rounded-full flex flex-col items-center justify-center">
-<span class="font-label-md text-label-md text-on-surface-variant">October</span>
-<span class="font-title-lg text-title-lg text-on-surface">$3,842.50</span>
-</div>
-</div>
-<!-- Legend -->
-<div class="space-y-3">
-<div class="flex items-center justify-between text-sm">
-<div class="flex items-center gap-2">
-<div class="w-3 h-3 rounded-full bg-primary-container"></div>
-<span class="font-body-sm text-body-sm text-on-surface">Rent &amp; Utilities</span>
-</div>
-<span class="font-title-lg text-title-lg text-on-surface text-sm">45%</span>
-</div>
-<div class="flex items-center justify-between text-sm">
-<div class="flex items-center gap-2">
-<div class="w-3 h-3 rounded-full bg-primary"></div>
-<span class="font-body-sm text-body-sm text-on-surface">Food &amp; Dining</span>
-</div>
-<span class="font-title-lg text-title-lg text-on-surface text-sm">25%</span>
-</div>
-<div class="flex items-center justify-between text-sm">
-<div class="flex items-center gap-2">
-<div class="w-3 h-3 rounded-full bg-tertiary-fixed"></div>
-<span class="font-body-sm text-body-sm text-on-surface">Travel</span>
-</div>
-<span class="font-title-lg text-title-lg text-on-surface text-sm">15%</span>
-</div>
-<div class="flex items-center justify-between text-sm">
-<div class="flex items-center gap-2">
-<div class="w-3 h-3 rounded-full bg-surface-container-highest"></div>
-<span class="font-body-sm text-body-sm text-on-surface">Other</span>
-</div>
-<span class="font-title-lg text-title-lg text-on-surface text-sm">15%</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-<div class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm transition-opacity duration-300" id="account-modal">
-<div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 scale-95">
-<!-- Modal Header -->
-<div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-surface-container-low">
-<h3 class="font-headline-md text-title-lg text-on-surface">Account Details</h3>
-<button class="p-2 hover:bg-gray-200 rounded-full transition-colors text-on-surface-variant" onclick="document.getElementById('account-modal').classList.add('hidden')">
-<span class="material-symbols-outlined">close</span>
-</button>
-</div>
-<!-- Modal Body -->
-<div class="p-6 space-y-6">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center">
-<img alt="User profile" class="w-14 h-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLAHoCuTSP9VliL9e41rQM5WolWgYZCPSX4zyPb8-PHs1RcTRKfZzAUxoUGSWC2vT6fguigMr_OTJkG_eiagWVIKgld3DOqWxdi70GC81tVlJl-ohX3tWMMn5BARzrIE7STWTXurd_45T3T8EJuLnnIm_zSwN5gXqsGCZ65_kqdFb2vhi_m-FTLi7C9nb6cWbHEgoQXh2Hgn-jOOg7C2eOHbIdvUdBgrDyhDlS2KJzd1FyzLgQQL-A0FJu67UUQ7ue2yVHkVvNN8YX"/>
-</div>
-<div>
-<p class="font-headline-md text-headline-md text-on-surface">Juan Pérez</p>
-<p class="text-primary font-medium flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">verified</span>
-            Premium Member
-          </p>
-</div>
-</div>
-<div class="grid gap-4">
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-outline">badge</span>
-<div>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">DNI / ID Card</p>
-<p class="text-on-surface">12345678A</p>
-</div>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-outline">mail</span>
-<div>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Email Address</p>
-<p class="text-on-surface">usuario@ejemplo.com</p>
-</div>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-outline">call</span>
-<div>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Phone Number</p>
-<p class="text-on-surface">+34 600 000 000</p>
-</div>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-outline">star</span>
-<div>
-<p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Account Type</p>
-<p class="text-on-surface">Personal Premium</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Modal Footer -->
-<div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-end">
-<button class="px-6 py-2 bg-primary text-white rounded-xl font-medium hover:bg-primary-container transition-colors shadow-lg shadow-primary/20" onclick="document.getElementById('account-modal').classList.add('hidden')">
-        Done
-      </button>
-</div>
-</div>
-<!-- Close on background click -->
-<div class="absolute inset-0 -z-10" onclick="document.getElementById('account-modal').classList.add('hidden')"></div>
-</div></body></html>
+
+<body>
+
+        <aside class="sidebar">
+                <div class="logo-box">
+                        <div class="logo-icon"><span class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">account_balance</span></div>
+                        <h1 style="font-size: 18px; font-weight: 700; color: var(--primario);">FintechPro</h1>
+                </div>
+                <nav class="nav-lista">
+                        <a href="#" class="nav-link activo"><span class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">dashboard</span> Dashboard</a>
+                        <a href="#" class="nav-link"><span class="material-symbols-outlined">account_balance</span>
+                                Accounts</a>
+                        <a href="#" class="nav-link"><span class="material-symbols-outlined">credit_card</span>
+                                Cards</a>
+                        <a href="#" class="nav-link"><span class="material-symbols-outlined">payments</span>
+                                Payments</a>
+                        <a href="#" class="nav-link"><span class="material-symbols-outlined">verified_user</span>
+                                Security</a>
+                </nav>
+        </aside>
+
+        <div class="main-wrapper">
+                <header class="header">
+                        <div style="font-weight: 600;">Dashboard Overview</div>
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                                <button class="notif-btn">
+                                        <span class="material-symbols-outlined">notifications</span>
+                                        <span class="notif-punto"></span>
+                                </button>
+                                <div class="perfil-btn" onclick="toggleModal(true)">
+                                        <img src="https://ui-avatars.com/api/?name=Alex+D&background=005bbf&color=fff"
+                                                style="width: 32px; border-radius: 50%;">
+                                        <span style="font-size: 14px; font-weight: 500;">Alex D.</span>
+                                        <span class="material-symbols-outlined"
+                                                style="font-size: 18px;">keyboard_arrow_down</span>
+                                </div>
+                        </div>
+                </header>
+
+                <main class="content">
+                        <section class="banner-balance">
+                                <div>
+                                        <p
+                                                style="font-size: 12px; font-weight: 600; color: var(--texto-gris); text-transform: uppercase;">
+                                                Total Balance</p>
+                                        <h2 style="font-size: 48px; font-weight: 700; letter-spacing: -1px;">
+                                                $42,500<span style="color: #727785; font-size: 24px;">.80</span></h2>
+                                </div>
+                                <button
+                                        style="padding: 12px 24px; background: var(--primario-suave); color: white; border: none; border-radius: 12px; font-weight: 600; cursor: pointer;">Account
+                                        Info</button>
+                        </section>
+
+                        <section class="grid-botones">
+                                <button class="card-accion">
+                                        <div class="icon-circle"
+                                                style="background: #e8f0fe; color: var(--primario-suave);"><span
+                                                        class="material-symbols-outlined">swap_horiz</span></div>
+                                        <span style="font-weight: 600;">Transferir</span>
+                                </button>
+                                <button class="card-accion">
+                                        <div class="icon-circle" style="background: #e6f4ea; color: var(--verde);"><span
+                                                        class="material-symbols-outlined">send_money</span></div>
+                                        <span style="font-weight: 600;">Bizum</span>
+                                </button>
+                                <button class="card-accion">
+                                        <div class="icon-circle" style="background: #e8f0fe; color: #759efd;"><span
+                                                        class="material-symbols-outlined">add_card</span></div>
+                                        <span style="font-weight: 600;">Recargar</span>
+                                </button>
+                                <button class="card-accion" style="border: 1px dashed var(--borde); box-shadow: none;">
+                                        <div class="icon-circle"
+                                                style="background: var(--fondo); color: var(--texto-gris);"><span
+                                                        class="material-symbols-outlined">add</span></div>
+                                        <span style="font-weight: 600; color: var(--texto-gris);">Más</span>
+                                </button>
+                        </section>
+
+                        <div class="inferior-grid">
+                                <div class="seccion-blanca">
+                                        <div
+                                                style="padding: 24px; border-bottom: 1px solid var(--borde); display: flex; justify-content: space-between;">
+                                                <h3 style="font-size: 18px;">Recent Movements</h3>
+                                                <a href="#"
+                                                        style="color: var(--primario-suave); font-size: 12px; font-weight: 600; text-decoration: none;">See
+                                                        All</a>
+                                        </div>
+                                        <div
+                                                style="padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                                <div style="display: flex; gap: 16px; align-items: center;">
+                                                        <div class="icon-circle"
+                                                                style="width: 40px; height: 40px; background: var(--error-fondo); color: #93000a;">
+                                                                <span
+                                                                        class="material-symbols-outlined">shopping_cart</span>
+                                                        </div>
+                                                        <div>
+                                                                <p style="font-weight: 600; font-size: 14px;">Whole
+                                                                        Foods Market</p>
+                                                                <p style="font-size: 12px; color: var(--texto-gris);">
+                                                                        Today, 10:42 AM</p>
+                                                        </div>
+                                                </div>
+                                                <span style="font-weight: 700;">-$142.50</span>
+                                        </div>
+                                        <div
+                                                style="padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;">
+                                                <div style="display: flex; gap: 16px; align-items: center;">
+                                                        <div class="icon-circle"
+                                                                style="width: 40px; height: 40px; background: var(--verde-fondo); color: #002108;">
+                                                                <span class="material-symbols-outlined">payments</span>
+                                                        </div>
+                                                        <div>
+                                                                <p style="font-weight: 600; font-size: 14px;">TechCorp
+                                                                        Salary</p>
+                                                                <p style="font-size: 12px; color: var(--texto-gris);">
+                                                                        Yesterday, 09:00 AM</p>
+                                                        </div>
+                                                </div>
+                                                <span style="font-weight: 700; color: var(--verde);">+$4,250.00</span>
+                                        </div>
+                                </div>
+
+                                <div class="seccion-blanca" style="padding: 24px;">
+                                        <h3 style="font-size: 18px; margin-bottom: 24px;">Expenses Breakdown</h3>
+                                        <div class="donut-box">
+                                                <div class="donut-centro">
+                                                        <span
+                                                                style="font-size: 12px; color: var(--texto-gris);">October</span>
+                                                        <span style="font-weight: 700; font-size: 18px;">$3,842</span>
+                                                </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                                                <div
+                                                        style="display: flex; justify-content: space-between; font-size: 14px;">
+                                                        <span><span
+                                                                        style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--primario-suave); margin-right: 8px;"></span>Rent
+                                                                & Utilities</span>
+                                                        <span style="font-weight: 600;">45%</span>
+                                                </div>
+                                                <div
+                                                        style="display: flex; justify-content: space-between; font-size: 14px;">
+                                                        <span><span
+                                                                        style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--primario); margin-right: 8px;"></span>Food
+                                                                & Dining</span>
+                                                        <span style="font-weight: 600;">25%</span>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </main>
+        </div>
+
+        <div class="modal-fondo" id="modalUser">
+                <div class="modal-caja">
+                        <div
+                                style="padding: 24px; border-bottom: 1px solid var(--borde); display: flex; justify-content: space-between; align-items: center;">
+                                <h3 style="font-weight: 700;">Account Details</h3>
+                                <span class="material-symbols-outlined" style="cursor: pointer;"
+                                        onclick="toggleModal(false)">close</span>
+                        </div>
+                        <div style="padding: 24px;">
+                                <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 24px;">
+                                        <img src="https://ui-avatars.com/api/?name=Alex+D&background=005bbf&color=fff"
+                                                style="width: 50px; border-radius: 50%;">
+                                        <div>
+                                                <p style="font-weight: 700;">Alex J. Smith</p>
+                                                <p
+                                                        style="color: var(--primario-suave); font-size: 12px; font-weight: 600;">
+                                                        Premium Member</p>
+                                        </div>
+                                </div>
+                                <div style="font-size: 14px; color: var(--texto-gris); display: grid; gap: 12px;">
+                                        <p><strong>Email:</strong> alex.smith@example.com</p>
+                                        <p><strong>ID:</strong> 4532 8921 7042</p>
+                                </div>
+                        </div>
+                        <div style="padding: 16px 24px; background: #f3f4f5; text-align: right;">
+                                <button style="padding: 8px 16px; background: var(--primario-suave); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;"
+                                        onclick="toggleModal(false)">Close</button>
+                        </div>
+                </div>
+        </div>
+
+        <script>
+                function toggleModal(show) {
+                        document.getElementById('modalUser').style.display = show ? 'flex' : 'none';
+                }
+        </script>
+</body>
+
+</html>
