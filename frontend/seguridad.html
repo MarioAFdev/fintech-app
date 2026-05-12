@@ -195,28 +195,6 @@
 <div class="grid grid-cols-12 gap-gutter">
 <!-- Left Column (Main Content) -->
 <div class="col-span-12 lg:col-span-8 flex flex-col gap-[32px]">
-<!-- Section: Quick Actions / Incident Cards -->
-<section>
-<h3 class="font-title-lg text-title-lg text-on-surface mb-4">Report an Incident</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<!-- Card 1: Lost Card -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-card-padding shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
-<div class="w-12 h-12 rounded-full bg-error-container text-on-error-container flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined">credit_card_off</span>
-</div>
-<h4 class="font-headline-md text-headline-md text-on-surface mb-1 text-[20px]">Lost or Stolen Card</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Freeze your card instantly and request a replacement to secure your funds.</p>
-</div>
-<!-- Card 2: Unknown Charges -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-card-padding shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
-<div class="w-12 h-12 rounded-full bg-[#fff3e0] text-[#e65100] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined">receipt_long</span>
-</div>
-<h4 class="font-headline-md text-headline-md text-on-surface mb-1 text-[20px]">Unknown Charges</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Review and dispute transactions you don't recognize to protect your balance.</p>
-</div>
-</div>
-</section>
 <!-- Section: Active Reporting Form (Simulating Accordion Expanded State) -->
 <section>
 <div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden">
@@ -281,53 +259,6 @@
 </div>
 <!-- Right Column (Contextual & Status - Glassmorphism element) -->
 <div class="col-span-12 lg:col-span-4 flex flex-col gap-[32px]">
-<!-- Security Score Card -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-card-padding shadow-[0_4px_20px_rgba(0,0,0,0.04)] relative overflow-hidden">
-<!-- Decorative background element -->
-<div class="absolute -right-10 -top-10 w-40 h-40 bg-secondary-fixed rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-<h3 class="font-title-lg text-title-lg text-on-surface mb-6 relative z-10">Security Health</h3>
-<div class="flex items-center gap-6 mb-6 relative z-10">
-<!-- Donut Chart representation -->
-<div class="relative w-24 h-24 flex-shrink-0">
-<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
-<!-- Background circle -->
-<circle cx="50" cy="50" fill="transparent" r="40" stroke="theme('colors.surface-container-high')" stroke-width="12"></circle>
-<!-- Progress circle (Success Green approximation) -->
-<circle class="transition-all duration-1000 ease-out" cx="50" cy="50" fill="transparent" r="40" stroke="#008939" stroke-dasharray="251.2" stroke-dashoffset="37.68" stroke-width="12"></circle>
-</svg>
-<div class="absolute inset-0 flex items-center justify-center flex-col">
-<span class="font-headline-md text-headline-md text-on-surface text-[24px]">85%</span>
-</div>
-</div>
-<div>
-<h4 class="font-body-md text-body-md font-semibold text-on-surface mb-1">Good Standing</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Your account is well protected. Review recommendations to improve.</p>
-</div>
-</div>
-<ul class="space-y-3 relative z-10 border-t border-outline-variant pt-4">
-<li class="flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#008939] text-[18px]">check_circle</span>
-<span class="font-body-sm text-body-sm text-on-surface">Two-Factor Auth</span>
-</div>
-<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded">Enabled</span>
-</li>
-<li class="flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#008939] text-[18px]">check_circle</span>
-<span class="font-body-sm text-body-sm text-on-surface">Login Alerts</span>
-</div>
-<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded">Enabled</span>
-</li>
-<li class="flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-outline-variant text-[18px]">radio_button_unchecked</span>
-<span class="font-body-sm text-body-sm text-on-surface">Device Management</span>
-</div>
-<a class="font-label-md text-label-md text-primary hover:underline" href="#">Review</a>
-</li>
-</ul>
-</div>
 <!-- Live Support Widget (Simulating Glassmorphism Right Drawer aesthetic) -->
 <div class="bg-white/70 backdrop-blur-[20px] border border-white/50 rounded-xl p-card-padding shadow-[0_8px_32px_rgba(13,71,161,0.06)] sticky top-24">
 <div class="flex items-center gap-3 mb-4">
