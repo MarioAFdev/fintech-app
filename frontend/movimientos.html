@@ -1,127 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movimientos - FintechPro</title>
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-secondary-fixed-variant": "#00429c",
-                        "on-primary-fixed": "#001a41",
-                        "tertiary-container": "#008939",
-                        "surface-bright": "#f8f9fa",
-                        "on-tertiary-fixed-variant": "#005320",
-                        "surface-tint": "#005bc0",
-                        "on-secondary-container": "#00337c",
-                        "tertiary-fixed": "#89fa9b",
-                        "secondary": "#2b5bb5",
-                        "surface-container-highest": "#e1e3e4",
-                        "on-tertiary-fixed": "#002108",
-                        "secondary-container": "#759efd",
-                        "background": "#f8f9fa",
-                        "surface-container-lowest": "#ffffff",
-                        "outline-variant": "#c1c6d6",
-                        "secondary-fixed-dim": "#b0c6ff",
-                        "on-surface-variant": "#414754",
-                        "on-secondary-fixed": "#001945",
-                        "surface-variant": "#e1e3e4",
-                        "on-primary": "#ffffff",
-                        "primary-fixed-dim": "#adc7ff",
-                        "on-tertiary-container": "#ffffff",
-                        "on-primary-container": "#ffffff",
-                        "on-error-container": "#93000a",
-                        "inverse-on-surface": "#f0f1f2",
-                        "surface-dim": "#d9dadb",
-                        "secondary-fixed": "#d9e2ff",
-                        "tertiary": "#006d2c",
-                        "on-background": "#191c1d",
-                        "primary-fixed": "#d8e2ff",
-                        "outline": "#727785",
-                        "surface-container": "#edeeef",
-                        "on-surface": "#191c1d",
-                        "error-container": "#ffdad6",
-                        "inverse-surface": "#2e3132",
-                        "tertiary-fixed-dim": "#6ddd81",
-                        "on-secondary": "#ffffff",
-                        "surface-container-high": "#e7e8e9",
-                        "surface": "#f8f9fa",
-                        "primary-container": "#1a73e8",
-                        "surface-container-low": "#f3f4f5",
-                        "primary": "#005bbf",
-                        "on-error": "#ffffff",
-                        "error": "#ba1a1a",
-                        "inverse-primary": "#adc7ff",
-                        "on-primary-fixed-variant": "#004493",
-                        "on-tertiary": "#ffffff"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "margin-page": "32px",
-                        "container-max-width": "1440px",
-                        "card-padding": "24px",
-                        "form-gap": "16px",
-                        "unit": "8px",
-                        "gutter": "24px"
-                    },
-                    "fontFamily": {
-                        "display-lg": ["Inter"],
-                        "title-lg": ["Inter"],
-                        "headline-md": ["Inter"],
-                        "body-md": ["Inter"],
-                        "label-md": ["Inter"],
-                        "body-sm": ["Inter"]
-                    },
-                    "fontSize": {
-                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "title-lg": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
-                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
-                    }
-                }
-            }
-        }
-    </script>
-
     <style>
-        /* --- ESTILOS GLOBALES ORIGINALES DE NUESTRO PROYECTO --- */
+        /* --- VARIABLES Y RESET --- */
         :root {
-            --fondo: #f8f9fa;
-            --blanco: #ffffff;
-            --primario: #005bbf;
-            --primario-suave: #1a73e8;
-            --texto: #191c1d;
-            --texto-gris: #414754;
-            --borde: #e1e3e4;
-            --verde: #008939;
-            --verde-fondo: #89fa9b;
+            --primary: #005bbf;
+            --primary-container: #1a73e8;
+            --on-primary-fixed-variant: #004493;
+            --secondary-fixed: #d9e2ff;
+            --on-secondary-fixed: #001945;
+            --secondary-fixed-dim: #b0c6ff;
+            --tertiary: #006d2c;
+            --tertiary-fixed: #89fa9b;
+            --on-tertiary-fixed: #002108;
+            --tertiary-fixed-dim: #6ddd81;
+            --tertiary-container: #008939;
+            --background: #f8f9fa;
+            --surface: #f8f9fa;
+            --surface-bright: #f8f9fa;
+            --surface-container-lowest: #ffffff;
+            --surface-container-low: #f3f4f5;
+            --surface-container: #edeeef;
+            --surface-container-high: #e7e8e9;
+            --on-surface: #191c1d;
+            --on-surface-variant: #414754;
+            --outline: #727785;
+            --outline-variant: #c1c6d6;
             --error: #ba1a1a;
-            --error-fondo: #ffdad6;
-            --sombra: 0 4px 20px rgba(0, 0, 0, 0.04);
+            --borde: #e1e3e4;
+            --shadow: 0px 4px 20px rgba(0,0,0,0.04);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--fondo);
-            color: var(--texto);
+            background-color: var(--background);
+            color: var(--on-surface);
             display: flex;
             height: 100vh;
             overflow: hidden;
@@ -130,16 +52,16 @@
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .fill { font-variation-settings: 'FILL' 1; }
 
-        /* --- SIDEBAR COMPLETO --- */
+        /* --- SIDEBAR --- */
         .sidebar {
             width: 280px;
-            background: var(--blanco);
+            background: var(--surface-container-lowest);
             border-right: 1px solid var(--borde);
             display: flex;
             flex-direction: column;
             padding: 24px 0;
-            z-index: 20;
             flex-shrink: 0;
+            z-index: 20;
         }
 
         .logo-box {
@@ -151,7 +73,7 @@
         }
 
         .logo-icon {
-            background: var(--primario-suave);
+            background: var(--primary-container);
             color: white;
             padding: 8px;
             border-radius: 8px;
@@ -172,34 +94,30 @@
             gap: 12px;
             padding: 12px 16px;
             text-decoration: none;
-            color: var(--texto-gris);
+            color: var(--on-surface-variant);
             font-size: 14px;
             font-weight: 500;
             border-radius: 8px;
             transition: 0.2s;
         }
 
-        .nav-link:hover {
-            background: #f3f4f5;
-            color: var(--texto);
-        }
+        .nav-link:hover { background: var(--surface-container-low); color: var(--on-surface); }
 
         .nav-link.activo {
-            background: #d9e2ff;
-            color: var(--primario);
+            background: var(--secondary-fixed);
+            color: var(--primary);
             font-weight: 600;
-            border-left: 4px solid var(--primario);
+            border-left: 4px solid var(--primary);
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
 
-        /* --- CABECERA --- */
+        /* --- MAIN LAYOUT --- */
         .main-wrapper {
             flex: 1;
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            background-color: var(--fondo);
         }
 
         .header {
@@ -215,25 +133,6 @@
             z-index: 10;
         }
 
-        .notif-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            padding: 8px;
-            color: var(--texto-gris);
-        }
-
-        .notif-punto {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 8px;
-            height: 8px;
-            background: var(--error);
-            border-radius: 50%;
-        }
-
         .perfil-btn {
             display: flex;
             align-items: center;
@@ -244,17 +143,124 @@
             transition: 0.2s;
         }
 
-        .perfil-btn:hover { background: #f3f4f5; }
+        .perfil-btn:hover { background: var(--surface-container-low); }
 
-        /* --- CONTENIDO DASHBOARD --- */
         .content {
             flex: 1;
             padding: 32px;
             overflow-y: auto;
-            position: relative;
         }
 
-        /* --- MODAL DE USUARIO --- */
+        .container-inner {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* --- GRID Y CARDS --- */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .card {
+            background: var(--surface-container-lowest);
+            border-radius: 16px;
+            border: 1px solid var(--outline-variant);
+            box-shadow: var(--shadow);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .col-4 { grid-column: span 4; }
+        .col-8 { grid-column: span 8; }
+
+        @media (max-width: 1024px) {
+            .col-4, .col-8 { grid-column: span 12; }
+        }
+
+        /* --- GRÁFICO --- */
+        .chart-container {
+            position: relative;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+
+        .chart-svg { width: 192px; height: 192px; transform: rotate(-90deg); }
+        .chart-circle { transition: all 0.5s ease-in-out; cursor: pointer; }
+        .chart-circle:hover { stroke-width: 16; }
+
+        .chart-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        /* --- TABLA --- */
+        .table-container {
+            overflow-x: auto;
+            border: 1px solid var(--outline-variant);
+            border-radius: 16px;
+            background: var(--surface-container-lowest);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .table-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--outline-variant);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--surface-bright);
+        }
+
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th {
+            padding: 12px 24px;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--on-surface-variant);
+            background: rgba(243, 244, 245, 0.5);
+            border-bottom: 1px solid var(--outline-variant);
+        }
+
+        td { padding: 16px 24px; border-bottom: 1px solid var(--outline-variant); }
+        tr:hover { background: var(--surface-bright); }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* --- BOTONES --- */
+        .btn-text {
+            background: none;
+            border: none;
+            color: var(--primary-container);
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .btn-text:hover { color: var(--on-primary-fixed-variant); }
+
+        /* --- MODAL --- */
         .modal-fondo {
             position: fixed;
             inset: 0;
@@ -268,16 +274,13 @@
 
         .modal-caja {
             background: white;
-            width: 400px;
+            width: 450px;
             border-radius: 24px;
             overflow: hidden;
             animation: zoom 0.3s ease;
         }
 
-        @keyframes zoom {
-            from { transform: scale(0.9); }
-            to { transform: scale(1); }
-        }
+        @keyframes zoom { from { transform: scale(0.9); } to { transform: scale(1); } }
     </style>
 </head>
 
@@ -285,8 +288,8 @@
 
     <aside class="sidebar">
         <div class="logo-box">
-            <div class="logo-icon"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span></div>
-            <h1 style="font-size: 18px; font-weight: 700; color: var(--primario);">FintechPro</h1>
+            <div class="logo-icon"><span class="material-symbols-outlined fill">account_balance</span></div>
+            <h1 style="font-size: 18px; font-weight: 700; color: var(--primary);">FintechPro</h1>
         </div>
         <nav class="nav-lista">
             <a href="dashboard.html" class="nav-link"><span class="material-symbols-outlined">dashboard</span> Dashboard</a>
@@ -301,9 +304,9 @@
         <header class="header">
             <div style="font-weight: 600;">Resumen de Movimientos</div>
             <div style="display: flex; align-items: center; gap: 16px;">
-                <button class="notif-btn">
+                <button style="background:none; border:none; color:var(--on-surface-variant); position:relative; padding:8px; cursor:pointer;">
                     <span class="material-symbols-outlined">notifications</span>
-                    <span class="notif-punto"></span>
+                    <span style="position:absolute; top:10px; right:10px; width:8px; height:8px; background:var(--error); border-radius:50%;"></span>
                 </button>
                 <div class="perfil-btn" onclick="toggleModal(true)">
                     <img src="https://ui-avatars.com/api/?name=Alex+D&background=005bbf&color=fff" style="width: 32px; border-radius: 50%;">
@@ -314,171 +317,103 @@
         </header>
 
         <main class="content">
-            <div class="max-w-container-max-width mx-auto">
-                <div class="flex justify-between items-end mb-8">
+            <div class="container-inner">
+                <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom: 32px;">
                     <div>
-                        <h2 class="font-headline-md text-headline-md text-on-surface mb-1">Movimientos</h2>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Track and analyze your recent financial activity.</p>
+                        <h2 style="font-size: 24px; font-weight: 600; margin-bottom: 4px;">Movimientos</h2>
+                        <p style="color: var(--on-surface-variant);">Track and analyze your recent financial activity.</p>
                     </div>
-                   
                 </div>
 
-                <div class="grid grid-cols-12 gap-gutter mb-8">
-                    <div class="col-span-12 lg:col-span-4 bg-surface-container-lowest rounded-[16px] p-card-padding shadow-[0px_4px_20px_rgba(0,0,0,0.04)] border border-outline-variant flex flex-col">
-                        <h3 class="font-title-lg text-title-lg text-on-surface mb-6">Gastos del Mes</h3>
-                        <div class="relative flex-1 flex items-center justify-center min-h-[200px]">
-                            <svg class="w-48 h-48 transform -rotate-90" viewbox="0 0 100 100">
+                <div class="grid-layout">
+                    <div class="card col-4">
+                        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 24px;">Gastos del Mes</h3>
+                        <div class="chart-container">
+                            <svg class="chart-svg" viewbox="0 0 100 100">
                                 <circle cx="50" cy="50" fill="transparent" r="40" stroke="#f3f4f5" stroke-width="14"></circle>
-                                <circle class="transition-all duration-500 ease-in-out hover:stroke-primary cursor-pointer" cx="50" cy="50" fill="transparent" r="40" stroke="#1a73e8" stroke-dasharray="251.2" stroke-dashoffset="138.16" stroke-width="14"></circle>
-                                <circle class="transition-all duration-500 ease-in-out hover:stroke-tertiary-fixed-dim cursor-pointer" cx="50" cy="50" fill="transparent" r="40" stroke="#89fa9b" stroke-dasharray="251.2" stroke-dashoffset="175.84" stroke-dashoffset-initial="251.2" stroke-width="14" transform="rotate(162 50 50)"></circle>
-                                <circle class="transition-all duration-500 ease-in-out cursor-pointer" cx="50" cy="50" fill="transparent" r="40" stroke="#759efd" stroke-dasharray="251.2" stroke-dashoffset="213.52" stroke-width="14" transform="rotate(270 50 50)"></circle>
-                                <circle class="transition-all duration-500 ease-in-out cursor-pointer" cx="50" cy="50" fill="transparent" r="40" stroke="#c1c6d6" stroke-dasharray="251.2" stroke-dashoffset="226.08" stroke-width="14" transform="rotate(324 50 50)"></circle>
+                                <circle class="chart-circle" cx="50" cy="50" fill="transparent" r="40" stroke="#1a73e8" stroke-dasharray="251.2" stroke-dashoffset="138.16" stroke-width="14"></circle>
+                                <circle class="chart-circle" cx="50" cy="50" fill="transparent" r="40" stroke="#89fa9b" stroke-dasharray="251.2" stroke-dashoffset="175.84" stroke-width="14" transform="rotate(162 50 50)"></circle>
+                                <circle class="chart-circle" cx="50" cy="50" fill="transparent" r="40" stroke="#759efd" stroke-dasharray="251.2" stroke-dashoffset="213.52" stroke-width="14" transform="rotate(270 50 50)"></circle>
+                                <circle class="chart-circle" cx="50" cy="50" fill="transparent" r="40" stroke="#c1c6d6" stroke-dasharray="251.2" stroke-dashoffset="226.08" stroke-width="14" transform="rotate(324 50 50)"></circle>
                             </svg>
-                            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                                <span class="font-body-sm text-body-sm text-on-surface-variant">Total</span>
-                                <span class="font-headline-md text-headline-md text-on-surface font-bold">-$4,250</span>
+                            <div class="chart-overlay">
+                                <span style="font-size:14px; color:var(--on-surface-variant);">Total</span>
+                                <span style="font-size:24px; font-weight:700;">-$4,250</span>
                             </div>
                         </div>
-                        <div class="mt-6 space-y-3">
-                            <div class="flex justify-between items-center text-sm">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-3 h-3 rounded-full bg-[#1a73e8]"></div>
-                                    <span class="font-body-sm text-body-sm text-on-surface">Rent & Utilities</span>
+                        <div style="margin-top: 24px; display: grid; gap: 12px;">
+                            <div style="display:flex; justify-content:space-between; font-size:14px;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <div style="width:12px; height:12px; border-radius:50%; background:#1a73e8;"></div> Rent & Utilities
                                 </div>
-                                <span class="font-body-sm text-body-sm font-semibold text-on-surface">45%</span>
+                                <span style="font-weight:600;">45%</span>
                             </div>
-                            <div class="flex justify-between items-center text-sm">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-3 h-3 rounded-full bg-[#89fa9b]"></div>
-                                    <span class="font-body-sm text-body-sm text-on-surface">Food & Dining</span>
+                            <div style="display:flex; justify-content:space-between; font-size:14px;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <div style="width:12px; height:12px; border-radius:50%; background:#89fa9b;"></div> Food & Dining
                                 </div>
-                                <span class="font-body-sm text-body-sm font-semibold text-on-surface">30%</span>
-                            </div>
-                            <div class="flex justify-between items-center text-sm">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-3 h-3 rounded-full bg-[#759efd]"></div>
-                                    <span class="font-body-sm text-body-sm text-on-surface">Shopping</span>
-                                </div>
-                                <span class="font-body-sm text-body-sm font-semibold text-on-surface">15%</span>
+                                <span style="font-weight:600;">30%</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-[16px] shadow-[0px_4px_20px_rgba(0,0,0,0.04)] border border-outline-variant overflow-hidden flex flex-col">
-                        <div class="p-card-padding border-b border-outline-variant flex justify-between items-center bg-surface-bright">
-                            <h3 class="font-title-lg text-title-lg text-on-surface">Recent Activity</h3>
-                            <button class="flex items-center gap-1 font-label-md text-label-md text-primary hover:text-on-primary-fixed-variant transition-colors">
-                                <span class="material-symbols-outlined text-[18px]">filter_list</span> Filter
-                            </button>
+                    <div class="col-8 table-container">
+                        <div class="table-header">
+                            <h3 style="font-size: 18px; font-weight: 600;">Recent Activity</h3>
+                            <button class="btn-text"><span class="material-symbols-outlined" style="font-size:18px;">filter_list</span> Filter</button>
                         </div>
-                        <div class="flex-1 overflow-x-auto">
-                            <table class="w-full text-left border-collapse">
-                                <thead>
-                                    <tr class="border-b border-outline-variant bg-surface-container-low/50">
-                                        <th class="py-3 px-card-padding font-label-md text-label-md text-on-surface-variant font-semibold">Payee</th>
-                                        <th class="py-3 px-card-padding font-label-md text-label-md text-on-surface-variant font-semibold">Category</th>
-                                        <th class="py-3 px-card-padding font-label-md text-label-md text-on-surface-variant font-semibold">Date</th>
-                                        <th class="py-3 px-card-padding font-label-md text-label-md text-on-surface-variant font-semibold text-right">Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="contenedor-transacciones">
-                                    <tr class="border-b border-outline-variant hover:bg-surface-bright transition-colors group">
-                                        <td class="py-4 px-card-padding">
-                                            <div class="flex items-center gap-3">
-                                                <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-outline group-hover:text-primary transition-colors">
-                                                    <span class="material-symbols-outlined">home</span>
-                                                </div>
-                                                <div>
-                                                    <p class="font-body-md text-body-md font-medium text-on-surface">Skyline Apartments</p>
-                                                    <p class="font-label-md text-label-md text-outline">ACH Transfer</p>
-                                                </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Payee</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                    <th style="text-align: right;">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="contenedor-transacciones">
+                                <tr>
+                                    <td>
+                                        <div style="display:flex; align-items:center; gap:12px;">
+                                            <div style="width:40px; height:40px; border-radius:50%; background:var(--surface-container); display:flex; align-items:center; justify-content:center; color:var(--outline);">
+                                                <span class="material-symbols-outlined">home</span>
                                             </div>
-                                        </td>
-                                        <td class="py-4 px-card-padding">
-                                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-md text-[11px]">Rent & Utilities</span>
-                                        </td>
-                                        <td class="py-4 px-card-padding">
-                                            <p class="font-body-sm text-body-sm text-on-surface">Oct 28, 2023</p>
-                                            <p class="font-label-md text-label-md text-outline">09:00 AM</p>
-                                        </td>
-                                        <td class="py-4 px-card-padding text-right">
-                                            <p class="font-body-md text-body-md font-medium text-on-surface">-$2,150.00</p>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-b border-outline-variant hover:bg-surface-bright transition-colors group">
-                                        <td class="py-4 px-card-padding">
-                                            <div class="flex items-center gap-3">
-                                                <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-outline group-hover:text-primary transition-colors">
-                                                    <span class="material-symbols-outlined">restaurant</span>
-                                                </div>
-                                                <div>
-                                                    <p class="font-body-md text-body-md font-medium text-on-surface">Bistro Central</p>
-                                                    <p class="font-label-md text-label-md text-outline">Card **4920</p>
-                                                </div>
+                                            <div>
+                                                <p style="font-weight:500;">Skyline Apartments</p>
+                                                <p style="font-size:12px; color:var(--outline);">ACH Transfer</p>
                                             </div>
-                                        </td>
-                                        <td class="py-4 px-card-padding">
-                                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-[11px]">Food & Dining</span>
-                                        </td>
-                                        <td class="py-4 px-card-padding">
-                                            <p class="font-body-sm text-body-sm text-on-surface">Oct 27, 2023</p>
-                                            <p class="font-label-md text-label-md text-outline">08:15 PM</p>
-                                        </td>
-                                        <td class="py-4 px-card-padding text-right">
-                                            <p class="font-body-md text-body-md font-medium text-on-surface">-$85.50</p>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-b border-outline-variant hover:bg-surface-bright transition-colors group">
-                                        <td class="py-4 px-card-padding">
-                                            <div class="flex items-center gap-3">
-                                                <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-outline group-hover:text-tertiary transition-colors">
-                                                    <span class="material-symbols-outlined">work</span>
-                                                </div>
-                                                <div>
-                                                    <p class="font-body-md text-body-md font-medium text-on-surface">TechCorp Inc.</p>
-                                                    <p class="font-label-md text-label-md text-outline">Direct Deposit</p>
-                                                </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge" style="background:var(--secondary-fixed); color:var(--on-secondary-fixed);">Rent & Utilities</span></td>
+                                    <td>
+                                        <p style="font-size:14px;">Oct 28, 2023</p>
+                                        <p style="font-size:12px; color:var(--outline);">09:00 AM</p>
+                                    </td>
+                                    <td style="text-align: right; font-weight: 500;">-$2,150.00</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display:flex; align-items:center; gap:12px;">
+                                            <div style="width:40px; height:40px; border-radius:50%; background:var(--surface-container); display:flex; align-items:center; justify-content:center; color:var(--outline);">
+                                                <span class="material-symbols-outlined">work</span>
                                             </div>
-                                        </td>
-                                        <td class="py-4 px-card-padding">
-                                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-surface-container-high text-on-surface font-label-md text-[11px]">Income</span>
-                                        </td>
-                                        <td class="py-4 px-card-padding">
-                                            <p class="font-body-sm text-body-sm text-on-surface">Oct 25, 2023</p>
-                                            <p class="font-label-md text-label-md text-outline">06:00 AM</p>
-                                        </td>
-                                        <td class="py-4 px-card-padding text-right">
-                                            <p class="font-body-md text-body-md font-medium text-tertiary-container">+$5,200.00</p>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-b border-outline-variant hover:bg-surface-bright transition-colors group">
-                                        <td class="py-4 px-card-padding">
-                                            <div class="flex items-center gap-3">
-                                                <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-outline group-hover:text-primary transition-colors">
-                                                    <span class="material-symbols-outlined">shopping_bag</span>
-                                                </div>
-                                                <div>
-                                                    <p class="font-body-md text-body-md font-medium text-on-surface">MegaMart Electronics</p>
-                                                    <p class="font-label-md text-label-md text-outline">Card **4920</p>
-                                                </div>
+                                            <div>
+                                                <p style="font-weight:500;">TechCorp Inc.</p>
+                                                <p style="font-size:12px; color:var(--outline);">Direct Deposit</p>
                                             </div>
-                                        </td>
-                                        <td class="py-4 px-card-padding">
-                                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-secondary-fixed-dim text-on-secondary-fixed font-label-md text-[11px]">Shopping</span>
-                                        </td>
-                                        <td class="py-4 px-card-padding">
-                                            <p class="font-body-sm text-body-sm text-on-surface">Oct 22, 2023</p>
-                                            <p class="font-label-md text-label-md text-outline">02:30 PM</p>
-                                        </td>
-                                        <td class="py-4 px-card-padding text-right">
-                                            <p class="font-body-md text-body-md font-medium text-on-surface">-$320.00</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="p-4 border-t border-outline-variant bg-surface-bright flex justify-center">
-                            <button id="btn-ver-mas" onclick="cargarMasTransacciones()" class="font-label-md text-label-md text-primary hover:underline transition-all">View All Transactions</button>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge" style="background:var(--surface-container-high);">Income</span></td>
+                                    <td>
+                                        <p style="font-size:14px;">Oct 25, 2023</p>
+                                        <p style="font-size:12px; color:var(--outline);">06:00 AM</p>
+                                    </td>
+                                    <td style="text-align: right; font-weight: 500; color: var(--tertiary-container);">+$5,200.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="padding: 16px; text-align: center; background: var(--surface-bright); border-top: 1px solid var(--outline-variant);">
+                            <button id="btn-ver-mas" onclick="cargarMasTransacciones()" class="btn-text" style="margin: 0 auto;">View All Transactions</button>
                         </div>
                     </div>
                 </div>
@@ -487,52 +422,32 @@
     </div>
 
     <div class="modal-fondo" id="modalUser">
-        <div class="modal-caja" style="max-width: 450px;">
+        <div class="modal-caja">
             <div style="padding: 24px; border-bottom: 1px solid var(--borde); display: flex; justify-content: space-between; align-items: center; background: #f8f9fa;">
-                <h3 style="font-weight: 700; color: #191c1d; margin: 0;">Detalles de la Cuenta</h3>
-                <span class="material-symbols-outlined" style="cursor: pointer; color: #414754;" onclick="toggleModal(false)">close</span>
+                <h3 style="font-weight: 700; margin: 0;">Detalles de la Cuenta</h3>
+                <span class="material-symbols-outlined" style="cursor: pointer; color: var(--on-surface-variant);" onclick="toggleModal(false)">close</span>
             </div>
-            
             <div style="padding: 24px;">
                 <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--borde);">
                     <img src="https://ui-avatars.com/api/?name=Alex+D&background=005bbf&color=fff" style="width: 56px; border-radius: 50%; border: 2px solid #d9e2ff;">
                     <div>
-                        <p style="font-weight: 700; color: #191c1d; font-size: 18px; margin: 0;">Alex J. Smith</p>
-                        <span style="display: inline-block; background: #e6f4ea; color: #006d2c; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 99px; text-transform: uppercase; margin-top: 4px;">Cuenta Activa</span>
+                        <p style="font-weight: 700; font-size: 18px; margin: 0;">Alex J. Smith</p>
+                        <span style="background: #e6f4ea; color: #006d2c; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 99px; text-transform: uppercase;">Cuenta Activa</span>
                     </div>
                 </div>
-
                 <div style="display: grid; gap: 16px;">
                     <div>
-                        <p style="font-size: 11px; font-weight: 600; color: #727785; text-transform: uppercase; margin-bottom: 4px;">Número de Cuenta (IBAN)</p>
-                        <div style="display: flex; justify-content: space-between; align-items: center; background: #f3f4f5; padding: 12px; border-radius: 10px; font-family: monospace; font-size: 14px; color: #191c1d;">
+                        <p style="font-size: 11px; font-weight: 600; color: var(--outline); text-transform: uppercase;">Número de Cuenta (IBAN)</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; background: #f3f4f5; padding: 12px; border-radius: 10px; font-family: monospace; font-size: 14px;">
                             <span>ES91 2100 0418 4502 0005 1234</span>
-                            <span class="material-symbols-outlined" style="font-size: 18px; color: #005bbf; cursor: pointer;">content_copy</span>
+                            <span class="material-symbols-outlined" style="font-size: 18px; color: var(--primary-container); cursor: pointer;">content_copy</span>
                         </div>
                     </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                        <div>
-                            <p style="font-size: 11px; font-weight: 600; color: #727785; text-transform: uppercase; margin-bottom: 4px;">Código BIC/SWIFT</p>
-                            <p style="font-weight: 600; color: #191c1d; font-size: 14px;">BSEY ES MM XXX</p>
-                        </div>
-                        <div>
-                            <p style="font-size: 11px; font-weight: 600; color: #727785; text-transform: uppercase; margin-bottom: 4px;">Tipo de Producto</p>
-                            <p style="font-weight: 600; color: #005bbf; font-size: 14px;">Personal Premium</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <p style="font-size: 11px; font-weight: 600; color: #727785; text-transform: uppercase; margin-bottom: 4px;">Fecha de apertura</p>
-                        <p style="font-weight: 500; color: #191c1d; font-size: 14px;">14 de Octubre, 2023</p>
-                    </div>
-
                 </div>
             </div>
-            
-            <div style="padding: 16px 24px; background: #f8f9fa; border-top: 1px solid var(--borde); text-align: right; display: flex; justify-content: space-between; align-items: center;">
-                <button style="background: none; border: none; color: #ba1a1a; font-size: 13px; font-weight: 600; cursor: pointer;">Descargar certificado (PDF)</button>
-                <button style="padding: 10px 20px; background: #1a73e8; color: white; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.2s;" onclick="toggleModal(false)">Entendido</button>
+            <div style="padding: 16px 24px; background: #f8f9fa; border-top: 1px solid var(--borde); display: flex; justify-content: space-between;">
+                <button style="background: none; border: none; color: var(--error); font-weight: 600; cursor: pointer;">Descargar PDF</button>
+                <button style="padding: 10px 20px; background: var(--primary-container); color: white; border: none; border-radius: 12px; font-weight: 600; cursor: pointer;" onclick="toggleModal(false)">Entendido</button>
             </div>
         </div>
     </div>
@@ -542,138 +457,37 @@
             document.getElementById('modalUser').style.display = show ? 'flex' : 'none';
         }
 
-        // Función para inyectar 5 transacciones más
         function cargarMasTransacciones() {
             const tabla = document.getElementById('contenedor-transacciones');
             const boton = document.getElementById('btn-ver-mas');
 
             const nuevasFilas = `
-                <tr class="border-b border-outline-variant hover:bg-surface-bright transition-colors group">
-                    <td class="py-4 px-card-padding">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-outline group-hover:text-primary transition-colors">
+                <tr>
+                    <td>
+                        <div style="display:flex; align-items:center; gap:12px;">
+                            <div style="width:40px; height:40px; border-radius:50%; background:var(--surface-container); display:flex; align-items:center; justify-content:center; color:var(--outline);">
                                 <span class="material-symbols-outlined">fitness_center</span>
                             </div>
                             <div>
-                                <p class="font-body-md text-body-md font-medium text-on-surface">Gym Madrid</p>
-                                <p class="font-label-md text-label-md text-outline">Cuota Mensual</p>
+                                <p style="font-weight:500;">Gym Madrid</p>
+                                <p style="font-size:12px; color:var(--outline);">Cuota Mensual</p>
                             </div>
                         </div>
                     </td>
-                    <td class="py-4 px-card-padding">
-                        <span class="inline-flex items-center px-2 py-1 rounded-md bg-secondary-fixed-dim text-on-secondary-fixed font-label-md text-[11px]">Salud</span>
+                    <td><span class="badge" style="background:var(--secondary-fixed-dim); color:var(--on-secondary-fixed);">Salud</span></td>
+                    <td>
+                        <p style="font-size:14px;">Oct 20, 2023</p>
+                        <p style="font-size:12px; color:var(--outline);">06:30 AM</p>
                     </td>
-                    <td class="py-4 px-card-padding">
-                        <p class="font-body-sm text-body-sm text-on-surface">Oct 20, 2023</p>
-                        <p class="font-label-md text-label-md text-outline">06:30 AM</p>
-                    </td>
-                    <td class="py-4 px-card-padding text-right">
-                        <p class="font-body-md text-body-md font-medium text-on-surface">-$29.90</p>
-                    </td>
-                </tr>
-                <tr class="border-b border-outline-variant hover:bg-surface-bright transition-colors group">
-                    <td class="py-4 px-card-padding">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-outline group-hover:text-primary transition-colors">
-                                <span class="material-symbols-outlined">send_money</span>
-                            </div>
-                            <div>
-                                <p class="font-body-md text-body-md font-medium text-on-surface">Bizum a David</p>
-                                <p class="font-label-md text-label-md text-outline">Cena post-clases DAW</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="py-4 px-card-padding">
-                        <span class="inline-flex items-center px-2 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-[11px]">Transferencia</span>
-                    </td>
-                    <td class="py-4 px-card-padding">
-                        <p class="font-body-sm text-body-sm text-on-surface">Oct 18, 2023</p>
-                        <p class="font-label-md text-label-md text-outline">10:15 PM</p>
-                    </td>
-                    <td class="py-4 px-card-padding text-right">
-                        <p class="font-body-md text-body-md font-medium text-on-surface">-$15.50</p>
-                    </td>
-                </tr>
-                <tr class="border-b border-outline-variant hover:bg-surface-bright transition-colors group">
-                    <td class="py-4 px-card-padding">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-outline group-hover:text-primary transition-colors">
-                                <span class="material-symbols-outlined">sports_esports</span>
-                            </div>
-                            <div>
-                                <p class="font-body-md text-body-md font-medium text-on-surface">Riot Games</p>
-                                <p class="font-label-md text-label-md text-outline">Riot Points (LoL)</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="py-4 px-card-padding">
-                        <span class="inline-flex items-center px-2 py-1 rounded-md bg-secondary-fixed-dim text-on-secondary-fixed font-label-md text-[11px]">Ocio</span>
-                    </td>
-                    <td class="py-4 px-card-padding">
-                        <p class="font-body-sm text-body-sm text-on-surface">Oct 15, 2023</p>
-                        <p class="font-label-md text-label-md text-outline">04:20 PM</p>
-                    </td>
-                    <td class="py-4 px-card-padding text-right">
-                        <p class="font-body-md text-body-md font-medium text-on-surface">-$10.00</p>
-                    </td>
-                </tr>
-                <tr class="border-b border-outline-variant hover:bg-surface-bright transition-colors group">
-                    <td class="py-4 px-card-padding">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-outline group-hover:text-tertiary transition-colors">
-                                <span class="material-symbols-outlined">work</span>
-                            </div>
-                            <div>
-                                <p class="font-body-md text-body-md font-medium text-on-surface">Nómina Camarero</p>
-                                <p class="font-label-md text-label-md text-outline">Ingreso mensual</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="py-4 px-card-padding">
-                        <span class="inline-flex items-center px-2 py-1 rounded-md bg-surface-container-high text-on-surface font-label-md text-[11px]">Income</span>
-                    </td>
-                    <td class="py-4 px-card-padding">
-                        <p class="font-body-sm text-body-sm text-on-surface">Oct 05, 2023</p>
-                        <p class="font-label-md text-label-md text-outline">08:00 AM</p>
-                    </td>
-                    <td class="py-4 px-card-padding text-right">
-                        <p class="font-body-md text-body-md font-medium text-tertiary-container">+$650.00</p>
-                    </td>
-                </tr>
-                <tr class="hover:bg-surface-bright transition-colors group">
-                    <td class="py-4 px-card-padding">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-outline group-hover:text-primary transition-colors">
-                                <span class="material-symbols-outlined">movie</span>
-                            </div>
-                            <div>
-                                <p class="font-body-md text-body-md font-medium text-on-surface">Crunchyroll</p>
-                                <p class="font-label-md text-label-md text-outline">Suscripción Anime</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="py-4 px-card-padding">
-                        <span class="inline-flex items-center px-2 py-1 rounded-md bg-secondary-fixed-dim text-on-secondary-fixed font-label-md text-[11px]">Suscripciones</span>
-                    </td>
-                    <td class="py-4 px-card-padding">
-                        <p class="font-body-sm text-body-sm text-on-surface">Oct 02, 2023</p>
-                        <p class="font-label-md text-label-md text-outline">10:00 AM</p>
-                    </td>
-                    <td class="py-4 px-card-padding text-right">
-                        <p class="font-body-md text-body-md font-medium text-on-surface">-$4.99</p>
-                    </td>
+                    <td style="text-align: right; font-weight: 500;">-$29.90</td>
                 </tr>
             `;
 
-            // Insertar nuevas filas al final
             tabla.insertAdjacentHTML('beforeend', nuevasFilas);
-
-            // Actualizar el estado del botón
             boton.innerText = "No hay más transacciones";
             boton.disabled = true;
-            boton.classList.remove('hover:underline', 'text-primary');
-            boton.classList.add('text-outline', 'cursor-default');
             boton.style.opacity = '0.5';
+            boton.style.cursor = 'default';
         }
     </script>
 </body>
